@@ -20,7 +20,8 @@ class CarInterface(CarInterfaceBase):
       ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.subaruLegacy)]
       ret.autoResumeSng = True
     else:
-      ret.enableBsm = 0x228 in fingerprint[0]
+      #ret.enableBsm = 0x228 in fingerprint[0]
+      ret.enableBsm = False
       ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.subaru)]
       if candidate in GLOBAL_GEN2:
         ret.safetyConfigs[0].safetyParam |= Panda.FLAG_SUBARU_GEN2
