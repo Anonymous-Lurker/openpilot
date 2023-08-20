@@ -75,11 +75,12 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.01, 0.05, 0.2, 0.21], [0.0010, 0.004, 0.008, 0.009]]
 
     elif candidate == CAR.CROSSTREK_2020H:
-      ret.mass = 1568. + STD_CARGO_KG
+      ret.mass = 1822. + STD_CARGO_KG
       ret.wheelbase = 2.67
       ret.centerToFront = ret.wheelbase * 0.5
       ret.steerRatio = 17           # learned, 14 stock
-      ret.steerActuatorDelay = 0.1
+      ret.steerActuatorDelay = 0.2
+      ret.steerLimitTimer = 0.6
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
       #ret.lateralTuning.init('pid')
       #ret.lateralTuning.pid.kf = 0.00005
