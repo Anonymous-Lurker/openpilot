@@ -79,7 +79,7 @@ class CarInterface(CarInterfaceBase):
       ret.wheelbase = 2.67
       ret.centerToFront = ret.wheelbase * 0.5
       ret.steerRatio = 18.984           # learned, 14 stock
-      ret.steerActuatorDelay = 0.1
+      ret.steerActuatorDelay = 0.2
       ret.steerLimitTimer = 0.9
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
       #ret.lateralTuning.init('pid')
